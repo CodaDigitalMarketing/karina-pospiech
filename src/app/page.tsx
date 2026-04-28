@@ -1,65 +1,139 @@
 import Image from "next/image";
+import Link from "next/link";
+import { projects } from "@/lib/data";
 
 export default function Home() {
+  const featured = projects.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/5 to-transparent pointer-events-none" />
+        <div className="relative text-center max-w-3xl mx-auto">
+          <p className="text-xs tracking-[0.3em] uppercase text-muted mb-6 animate-fade-in-up opacity-0">
+            Europäische Künstlerprojekte
           </p>
+          <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-tight mb-6 animate-fade-in-up opacity-0 animate-delay-100">
+            Karina
+            <br />
+            Pośpiech
+          </h1>
+          <div className="h-px bg-accent mx-auto animate-line-reveal mb-8" />
+          <p className="text-sm md:text-base text-muted leading-relaxed max-w-xl mx-auto animate-fade-in-up opacity-0 animate-delay-200">
+            Filme · Rauminstallationen · Fotografie · Siebdruck
+          </p>
+          <p className="text-xs text-muted/60 mt-2 animate-fade-in-up opacity-0 animate-delay-300">
+            Deutsch-polnisches Künstlerinnenprojekt
+          </p>
+          <div className="mt-12 animate-fade-in-up opacity-0 animate-delay-400">
+            <Link
+              href="/projects"
+              className="inline-block text-xs tracking-widest uppercase border border-foreground/20 px-8 py-3 hover:bg-foreground hover:text-background transition-all duration-300"
+            >
+              Projekte ansehen
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Ausgewählte Arbeiten */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="flex items-center justify-between mb-16">
+          <div>
+            <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
+              Ausgewählte Arbeiten
+            </p>
+            <h2 className="text-3xl font-light">Projekte</h2>
+          </div>
+          <Link
+            href="/projects"
+            className="text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors"
           >
+            Alle ansehen &rarr;
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featured.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="group"
+            >
+              <div className="aspect-[4/3] relative overflow-hidden bg-surface mb-4">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  fill
+                  className="object-cover img-hover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  unoptimized
+                />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-500" />
+              </div>
+              <p className="text-xs tracking-widest uppercase text-muted mb-1">
+                {project.year}
+              </p>
+              <h3 className="text-lg font-light group-hover:text-accent transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-xs text-muted mt-1">{project.medium}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Veranstaltung */}
+      <section className="bg-surface border-y border-border">
+        <div className="max-w-5xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-[1fr_360px] gap-12 items-center">
+          <div className="text-center md:text-left">
+            <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">
+              Aktuell
+            </p>
+            <h2 className="text-2xl md:text-3xl font-light mb-6">
+              Offene Ateliers und Ausstellung im Rahmen der schöneberger art
+            </h2>
+            <p className="text-muted leading-relaxed mb-2">
+              Das erste Wochenende im November
+            </p>
+            <p className="text-sm text-muted">
+              Im Kulturhaus Schöneberg · Kyffhäuserstraße 23 · 10781 Berlin
+            </p>
+            <p className="text-sm text-muted mt-1">
+              Samstag von 14–20 Uhr · Sonntag von 12–18 Uhr
+            </p>
+            <div className="flex items-center justify-center md:justify-start gap-6 mt-6">
+              <a
+                href="https://www.kulturhaus-schoeneberg.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-accent hover:text-accent-light transition-colors"
+              >
+                www.kulturhaus-schoeneberg.de
+              </a>
+              <a
+                href="https://www.schoeneberger-art.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-accent hover:text-accent-light transition-colors"
+              >
+                www.schoeneberger-art.de
+              </a>
+            </div>
+          </div>
+          <div className="relative overflow-hidden bg-surface mx-auto md:ml-auto md:mr-0">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/images/scraped/bilder/unisono_karina.jpg"
+              alt="Karina Pośpiech"
+              width={360}
+              height={270}
+              className="w-full h-auto"
+              unoptimized
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+    </>
   );
 }

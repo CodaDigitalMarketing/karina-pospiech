@@ -1,0 +1,96 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const links = [
+  { href: "/", label: "Karina Pośpiech" },
+  { href: "/projects", label: "Projects" },
+  { href: "/exhibitions", label: "Exhibitions" },
+  { href: "/cv", label: "CV" },
+  { href: "/contact", label: "Contact" },
+];
+
+export default function Navigation() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <Link
+          href="/"
+          className="text-sm font-medium tracking-widest uppercase text-foreground hover:text-accent transition-colors"
+        >
+          Karina Pośpiech
+        </Link>
+
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-8">
+          {links.slice(1).map((link) => {
+            const active =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`text-xs tracking-widest uppercase transition-colors ${
+                    active
+                      ? "text-accent"
+                      : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-5 h-px bg-foreground transition-transform ${
+              open ? "rotate-45 translate-y-[3.5px]" : ""
+            }`}
+          />
+          <span
+            className={`block w-5 h-px bg-foreground transition-opacity ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-5 h-px bg-foreground transition-transform ${
+              open ? "-rotate-45 -translate-y-[3.5px]" : ""
+            }`}
+          />
+        </button>
+      </nav>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden bg-background border-b border-border">
+          <ul className="flex flex-col px-6 py-4 gap-4">
+            {links.slice(1).map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </header>
+  );
+}

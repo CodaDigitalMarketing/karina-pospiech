@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const links = [
   { href: "/", label: "Karina Pośpiech", labelDe: "Karina Pośpiech" },
@@ -19,8 +20,8 @@ export default function Navigation() {
   const { language } = useLanguage();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 relative">
+      <nav className="max-w-6xl mx-auto px-6 pr-28 py-4 flex items-center justify-between">
         <Link
           href="/"
           className="text-sm font-medium tracking-widest uppercase text-foreground hover:text-accent transition-colors"
@@ -73,7 +74,13 @@ export default function Navigation() {
             }`}
           />
         </button>
+
       </nav>
+
+      {/* Language toggle — pinned to far right of header */}
+      <div className="absolute right-6 top-0 bottom-0 flex items-center">
+        <LanguageToggle />
+      </div>
 
       {/* Mobile menu */}
       {open && (

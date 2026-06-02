@@ -21,10 +21,10 @@ export default function Navigation() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 relative">
-      <nav className="max-w-6xl mx-auto px-6 pr-28 py-4 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 pr-20 sm:px-6 sm:pr-28 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-medium tracking-widest uppercase text-foreground hover:text-accent transition-colors"
+          className="text-xs sm:text-sm font-medium tracking-widest uppercase text-foreground hover:text-accent transition-colors"
         >
           Karina Pośpiech
         </Link>
@@ -78,7 +78,7 @@ export default function Navigation() {
       </nav>
 
       {/* Language toggle — pinned to far right of header */}
-      <div className="absolute right-6 top-0 bottom-0 flex items-center">
+      <div className="absolute right-4 sm:right-6 top-0 bottom-0 flex items-center">
         <LanguageToggle />
       </div>
 

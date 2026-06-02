@@ -18,7 +18,7 @@ export default function ProjectDetailContent({ project, prev, next }: Props) {
 
   return (
     <div className="pt-28 pb-16">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Breadcrumb */}
         <Link
           href="/projects"
@@ -28,11 +28,11 @@ export default function ProjectDetailContent({ project, prev, next }: Props) {
         </Link>
 
         {/* Title */}
-        <div className="mt-8 mb-12">
+        <div className="mt-6 sm:mt-8 mb-8 sm:mb-12">
           <p className="text-xs tracking-[0.3em] uppercase text-accent mb-2">
             {project.year}
           </p>
-          <h1 className="text-4xl md:text-5xl font-light mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light mb-4">
             {de ? project.title : project.titleEn}
           </h1>
           <p className="text-sm text-muted">
@@ -64,7 +64,7 @@ export default function ProjectDetailContent({ project, prev, next }: Props) {
         </div>
 
         {/* Previous/Next */}
-        <div className="mt-20 pt-8 border-t border-border flex items-center justify-between">
+        <div className="mt-12 sm:mt-20 pt-8 border-t border-border flex items-center justify-between gap-4">
           {prev ? (
             <Link
               href={`/projects/${prev.slug}`}

@@ -13,13 +13,13 @@ export default function HomeContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20">
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/5 to-transparent pointer-events-none" />
         <div className="relative text-center max-w-3xl mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-muted mb-6 animate-fade-in-up opacity-0">
             {de ? "Europäische Künstlerprojekte" : "European Art Projects"}
           </p>
-          <h1 className="text-5xl md:text-7xl font-light tracking-tight leading-tight mb-6 animate-fade-in-up opacity-0 animate-delay-100">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-light tracking-tight leading-tight mb-6 animate-fade-in-up opacity-0 animate-delay-100">
             Karina
             <br />
             Pośpiech
@@ -47,13 +47,13 @@ export default function HomeContent() {
       </section>
 
       {/* Featured Works */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
-        <div className="flex items-center justify-between mb-16">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+        <div className="flex items-center justify-between mb-10 sm:mb-16">
           <div>
             <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
               {de ? "Ausgewählte Arbeiten" : "Selected Works"}
             </p>
-            <h2 className="text-3xl font-light">
+            <h2 className="text-2xl sm:text-3xl font-light">
               {de ? "Projekte" : "Projects"}
             </h2>
           </div>
@@ -64,7 +64,7 @@ export default function HomeContent() {
             {de ? "Alle ansehen" : "View All"} &rarr;
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {featured.map((project) => (
             <Link
               key={project.slug}
@@ -98,7 +98,7 @@ export default function HomeContent() {
 
       {/* Current Event */}
       <section className="bg-surface border-y border-border">
-        <div className="max-w-5xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-[1fr_360px] gap-12 items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-20 grid grid-cols-1 md:grid-cols-[1fr_360px] gap-8 sm:gap-12 items-center">
           <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.3em] uppercase text-accent mb-4">
               {de ? "Aktuell" : "Current"}
@@ -123,7 +123,7 @@ export default function HomeContent() {
                 ? "Samstag von 14–20 Uhr · Sonntag von 12–18 Uhr"
                 : "Saturday 2–8 PM · Sunday 12–6 PM"}
             </p>
-            <div className="flex items-center justify-center md:justify-start gap-6 mt-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-6 mt-6">
               <a
                 href="https://www.kulturhaus-schoeneberg.de"
                 target="_blank"
@@ -142,7 +142,7 @@ export default function HomeContent() {
               </a>
             </div>
           </div>
-          <div className="relative overflow-hidden bg-surface mx-auto md:ml-auto md:mr-0">
+          <div className="relative overflow-hidden bg-surface mx-auto md:ml-auto md:mr-0 max-w-xs sm:max-w-sm md:max-w-none">
             <Image
               src="/images/scraped/bilder/unisono_karina.jpg"
               alt="Karina Pośpiech"

@@ -10,22 +10,22 @@ export default function CVContent() {
 
   return (
     <div className="pt-28 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
             {de ? "Lebenslauf" : "Curriculum Vitae"}
           </p>
-          <h1 className="text-4xl md:text-5xl font-light">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">
             Karina Pośpiech
           </h1>
           <div className="h-px w-16 bg-accent mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 sm:gap-12">
           {/* Portrait */}
           <div>
-            <div className="aspect-[3/4] relative overflow-hidden bg-surface">
+            <div className="aspect-[3/4] relative overflow-hidden bg-surface max-w-[200px] sm:max-w-none">
               <Image
                 src="/images/scraped/bilder/b_karina_pospiech.jpg"
                 alt="Karina Pośpiech"
@@ -40,7 +40,7 @@ export default function CVContent() {
           </div>
 
           {/* CV Content */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* Bio */}
             <section>
               <p className="text-muted leading-relaxed">
@@ -57,9 +57,9 @@ export default function CVContent() {
                 {cvData.education.map((item, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 border-b border-border/50 pb-4"
+                    className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 border-b border-border/50 pb-4"
                   >
-                    <span className="text-sm text-muted whitespace-nowrap w-24">
+                    <span className="text-xs sm:text-sm text-muted whitespace-nowrap sm:w-24">
                       {item.period}
                     </span>
                     <p className="text-sm">

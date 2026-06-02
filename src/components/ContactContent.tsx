@@ -9,21 +9,21 @@ export default function ContactContent() {
 
   return (
     <div className="pt-28 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
             {de ? "Kontakt" : "Contact"}
           </p>
-          <h1 className="text-4xl md:text-5xl font-light">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">
             {de ? "Kontakt" : "Contact"}
           </h1>
           <div className="h-px w-16 bg-accent mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16">
           {/* Contact info */}
-          <div className="space-y-10">
+          <div className="space-y-8 sm:space-y-10">
             <div>
               <h2 className="text-xs tracking-[0.3em] uppercase text-accent mb-4">
                 {de ? "Künstlerin" : "Artist"}
@@ -70,8 +70,8 @@ export default function ContactContent() {
           </div>
 
           {/* Portrait */}
-          <div className="flex items-start justify-center">
-            <div className="w-56 aspect-[3/4] relative overflow-hidden bg-surface">
+          <div className="flex items-start justify-center md:justify-start">
+            <div className="w-40 sm:w-56 aspect-[3/4] relative overflow-hidden bg-surface">
               <Image
                 src="/images/scraped/bilder/b_karina_pospiech.jpg"
                 alt="Karina Pośpiech"
@@ -84,7 +84,7 @@ export default function ContactContent() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-20 pt-8 border-t border-border space-y-3">
+        <div className="mt-12 sm:mt-20 pt-8 border-t border-border space-y-3">
           <p className="text-xs text-muted leading-relaxed max-w-2xl">
             {de
               ? "Copyright für alle Fotos, Webdesign und Texte außer bei dem Projekt PUTZ.FRAU und H.Ohde: Karina Pośpiech. PUTZ.FRAU — Barbara Kenneweg; H.Ohde — Julie August."

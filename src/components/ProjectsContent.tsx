@@ -11,20 +11,20 @@ export default function ProjectsContent() {
 
   return (
     <div className="pt-28 pb-16">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
             Portfolio
           </p>
-          <h1 className="text-4xl md:text-5xl font-light">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">
             {de ? "Projekte" : "Projects"}
           </h1>
           <div className="h-px w-16 bg-accent mt-6" />
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 sm:gap-y-12 max-w-4xl mx-auto">
           {projects.map((project) => (
             <Link
               key={project.slug}
@@ -44,7 +44,7 @@ export default function ProjectsContent() {
               </div>
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="text-xl font-light group-hover:text-accent transition-colors">
+                  <h2 className="text-base sm:text-xl font-light group-hover:text-accent transition-colors">
                     {de ? project.title : project.titleEn}
                   </h2>
                   <p className="text-xs text-muted mt-1">

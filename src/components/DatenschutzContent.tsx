@@ -8,12 +8,12 @@ export default function DatenschutzContent() {
 
   return (
     <div className="pt-28 pb-16">
-      <div className="max-w-3xl mx-auto px-6">
-        <div className="mb-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        <div className="mb-10 sm:mb-16">
           <p className="text-xs tracking-[0.3em] uppercase text-muted mb-2">
             {de ? "Rechtliches" : "Legal"}
           </p>
-          <h1 className="text-4xl md:text-5xl font-light">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-light">
             {de ? "Datenschutzerklärung" : "Privacy Policy"}
           </h1>
           <div className="h-px w-16 bg-accent mt-6" />

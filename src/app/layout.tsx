@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Film, Room Installations, Photography, Screen Printing — European Art Projects by Karina Pośpiech",
+  icons: [],
 };
 
 export default function RootLayout({

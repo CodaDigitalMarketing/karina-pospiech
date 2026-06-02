@@ -3,6 +3,8 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Providers from "@/components/Providers";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,11 +13,11 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    default: "Karina Pośpiech — Europäische Künstlerprojekte",
+    default: "Karina Pośpiech — European Art Projects",
     template: "%s — Karina Pośpiech",
   },
   description:
-    "Filme, Rauminstallationen, Fotografie, Siebdruck — Europäische Künstlerprojekte von Karina Pośpiech",
+    "Film, Room Installations, Photography, Screen Printing — European Art Projects by Karina Pośpiech",
 };
 
 export default function RootLayout({
@@ -24,11 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className={`${geistSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <Providers>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <LanguageToggle />
+        </Providers>
       </body>
     </html>
   );

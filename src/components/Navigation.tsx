@@ -3,18 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const links = [
-  { href: "/", label: "Karina Pośpiech" },
-  { href: "/projects", label: "Projects" },
-  { href: "/exhibitions", label: "Exhibitions" },
-  { href: "/cv", label: "CV" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Karina Pośpiech", labelDe: "Karina Pośpiech" },
+  { href: "/projects", label: "Projects", labelDe: "Projekte" },
+  { href: "/exhibitions", label: "Exhibitions", labelDe: "Ausstellungen" },
+  { href: "/cv", label: "CV", labelDe: "Lebenslauf" },
+  { href: "/contact", label: "Contact", labelDe: "Kontakt" },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { language } = useLanguage();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -42,7 +44,7 @@ export default function Navigation() {
                       : "text-muted hover:text-foreground"
                   }`}
                 >
-                  {link.label}
+                  {language === "de" ? link.labelDe : link.label}
                 </Link>
               </li>
             );
@@ -84,7 +86,7 @@ export default function Navigation() {
                   onClick={() => setOpen(false)}
                   className="text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors"
                 >
-                  {link.label}
+                  {language === "de" ? link.labelDe : link.label}
                 </Link>
               </li>
             ))}

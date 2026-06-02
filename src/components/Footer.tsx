@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Footer() {
+  const { language } = useLanguage();
+
   return (
     <footer className="border-t border-border mt-24">
       <div className="max-w-6xl mx-auto px-6 py-12 flex items-center justify-center">
@@ -8,7 +13,7 @@ export default function Footer() {
           href="/datenschutz"
           className="text-xs text-muted hover:text-foreground tracking-wide transition-colors"
         >
-          Datenschutz
+          {language === "de" ? "Datenschutz" : "Privacy Policy"}
         </Link>
       </div>
     </footer>

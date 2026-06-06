@@ -73,7 +73,7 @@ export default function ContactContent() {
           <div className="flex items-start justify-center md:justify-start">
             <div className="w-40 sm:w-56 aspect-[3/4] relative overflow-hidden bg-surface">
               <Image
-                src="/images/scraped/bilder/b_karina_pospiech.jpg"
+                src="/images/original/Portrait.jpeg"
                 alt="Karina Pośpiech"
                 fill
                 className="object-cover object-[33%_13%]"

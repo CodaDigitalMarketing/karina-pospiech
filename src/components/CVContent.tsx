@@ -27,7 +27,7 @@ export default function CVContent() {
           <div>
             <div className="aspect-[3/4] relative overflow-hidden bg-surface max-w-[200px] sm:max-w-none">
               <Image
-                src="/images/scraped/bilder/b_karina_pospiech.jpg"
+                src="/images/original/Portrait.jpeg"
                 alt="Karina Pośpiech"
                 fill
                 className="object-cover object-[33%_13%]"

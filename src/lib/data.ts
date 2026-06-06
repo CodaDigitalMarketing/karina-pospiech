@@ -1,6 +1,7 @@
 export type ContentBlock =
   | { type: "image"; src: string }
-  | { type: "text"; text: string };
+  | { type: "text"; text: string }
+  | { type: "video"; src: string };
 
 export interface Project {
   slug: string;
@@ -22,11 +23,14 @@ export const projects: Project[] = [
     year: "2016–2017",
     medium: "Fotomontage, Cyanotypie, Siebdruck und Carborundum – Radierung. Originalfotos von Helga Kneidl",
     mediumEn: "Photomontage, Cyanotype, Screen Print and Carborundum Etching. Original photos by Helga Kneidl",
-    thumbnail: "/images/scraped/bilder/fbi_01.jpg",
+    thumbnail: "/images/original/FBI_30x40_Pospiech.jpg",
     content: [
-      { type: "image", src: "/images/scraped/bilder/b_fbi_01.jpg" },
+      { type: "image", src: "/images/original/FBI_Lunge.jpg" },
+      { type: "image", src: "/images/original/FBI_Schädel.jpg" },
+      { type: "image", src: "/images/original/FBI Fassbinder Beuys + Ich .jpg" },
       { type: "text", text: "Bei einem Besuch der Berliner Fotografin Helga Kneidl entdeckte ich eher zufällig die Fotonegative von Rainer Werner Fassbinder und Joseph Beuys, die sie 1977 und 1983 im Hamburger Schauspielhaus portraitiert hat. Da mich eine Art Seelenverwandschaft mit den beiden Künstlern verbindet, entschied ich mich, die Fotos für eine künstlerische Bearbeitung zu erwerben. Diese Fotografien und meine Fotos aus Familienbesitz dienten als Grundlage für das Projekt." },
       { type: "image", src: "/images/scraped/bilder/b_fbi_02.jpg" },
+      { type: "image", src: "/images/original/FBI_30x30_Pospiech.jpg" },
       { type: "text", text: "Was haben Fassbinder und Beuys gemeinsam? Man könnte sagen: die Einheit von gelebtem Leben und ihrer Kunst, die unermüdliche Forderung nach Freiheit und unkonventionelle Methoden und Herangehensweisen in der Durchsetzung ihrer Ideale und Ideen. Beide Künstler haben mich im Laufe meines Lebens immer wieder begleitet und mein Denken und künstlerisches Schaffen beeinflusst. FBI ist der Beginn einer imaginären Freundschaft, der Versuch einer Annäherung mit ungewissem Ausgang." },
       { type: "image", src: "/images/scraped/bilder/b_fbi_03.jpg" },
       { type: "text", text: "Für Joseph Beuys ist das Kreuz ein Symbol für die Kraft der individuellen Freiheit. Das Symmetrische Kreuz steht für die Ganzheitlichkeit, wo sich zwei formal gleiche aber in der Anordnung entgegen gesetzte Elemente zu einer größeren Form im Einklang – unisono – verbinden." },
@@ -34,9 +38,12 @@ export const projects: Project[] = [
       { type: "text", text: "Zur Ausstellung erscheint ein Katalog. ISBN: 978-3-00-056819-0" },
     ],
     contentEn: [
-      { type: "image", src: "/images/scraped/bilder/b_fbi_01.jpg" },
+      { type: "image", src: "/images/original/FBI_Lunge.jpg" },
+      { type: "image", src: "/images/original/FBI_Schädel.jpg" },
+      { type: "image", src: "/images/original/FBI Fassbinder Beuys + Ich .jpg" },
       { type: "text", text: "During a visit to Berlin photographer Helga Kneidl, I stumbled upon the photo negatives of Rainer Werner Fassbinder and Joseph Beuys, whom she had portrayed in 1977 and 1983 at the Hamburg Schauspielhaus. Feeling a kind of spiritual kinship with both artists, I decided to acquire the photos for artistic reworking. These photographs and my own family photos formed the basis for this project." },
       { type: "image", src: "/images/scraped/bilder/b_fbi_02.jpg" },
+      { type: "image", src: "/images/original/FBI_30x30_Pospiech.jpg" },
       { type: "text", text: "What do Fassbinder and Beuys have in common? One might say: the unity of lived life and their art, the tireless demand for freedom, and unconventional methods and approaches in pursuing their ideals and ideas. Both artists have accompanied me throughout my life, influencing my thinking and artistic work. FBI is the beginning of an imaginary friendship, an attempt at rapprochement with an uncertain outcome." },
       { type: "image", src: "/images/scraped/bilder/b_fbi_03.jpg" },
       { type: "text", text: "For Joseph Beuys, the cross is a symbol of the power of individual freedom. The symmetrical cross represents wholeness, where two formally equal but oppositely arranged elements unite into a greater form in harmony — unisono." },
@@ -53,7 +60,7 @@ export const projects: Project[] = [
     mediumEn: "Room installation: Photomontage on paper and polyester film, 12 banners, height 300 cm, varying widths from 43 to 91 cm",
     thumbnail: "/images/scraped/bilder/projects_rosen_01.jpg",
     content: [
-      { type: "image", src: "/images/scraped/bilder/b_rosen_01.jpg" },
+      { type: "image", src: "/images/original/Bild_3_Pospiech_GaR.jpg" },
       { type: "text", text: 'Deutsch-Polnisches National- und Familiengedächtnis. „Was der Raum für die Gedächtniskunst, ist die Zeit für die Erinnerungskultur. Vielleicht darf man noch einen Schritt weitergehen: wie die Gedächtniskunst zum Lernen, so gehört die Erinnerungskultur zum Planen und Hoffen, d. h. zur Ausbildung sozialer Sinn- und Zeithorizonte." (Jan Assmann, Das kulturelle Gedächtnis)' },
       { type: "image", src: "/images/scraped/bilder/b_rosen_02.jpg" },
       { type: "text", text: "Ausgewählte historische Fotografien der deutsch-polnischen Familien- und Landesgeschichte zeigen die unterschiedlichen Schichten der Blüten- und Dornenzeiten, in die ich hinein gebettet wurde." },
@@ -61,7 +68,7 @@ export const projects: Project[] = [
       { type: "text", text: "Ich verbinde Abschnitte aus meiner und jener Geschichte auf beidseitig bedruckten Bändern, deren Anordnung von Stonehenge inspiriert wurde." },
     ],
     contentEn: [
-      { type: "image", src: "/images/scraped/bilder/b_rosen_01.jpg" },
+      { type: "image", src: "/images/original/Bild_3_Pospiech_GaR.jpg" },
       { type: "text", text: 'German-Polish national and family memory. "What space is to the art of memory, time is to the culture of remembrance. Perhaps one may go a step further: as the art of memory belongs to learning, so the culture of remembrance belongs to planning and hoping, i.e., to the formation of social horizons of meaning and time." (Jan Assmann, Cultural Memory)' },
       { type: "image", src: "/images/scraped/bilder/b_rosen_02.jpg" },
       { type: "text", text: "Selected historical photographs of German-Polish family and national history reveal the different layers of times of bloom and thorns into which I was born." },
@@ -78,7 +85,9 @@ export const projects: Project[] = [
     mediumEn: "German-Polish Female Artist Project in Upper Silesia / Zabrze-Biskupice Borsig Works",
     thumbnail: "/images/scraped/bilder/b_zeche2_gr.jpg",
     content: [
+      { type: "video", src: "https://www.youtube.com/embed/GITVK9GjBnA" },
       { type: "text", text: "SilesiaTopia 2014. Interview mit Karina Pośpiech zum Projekt, im Auftrag der Heinrich-Böll-Stiftung, Berlin." },
+      { type: "video", src: "https://www.youtube.com/embed/34mHS241A7M" },
       { type: "text", text: "SilesiaTopia in der Galerie Rondo Sztuki in Katowice / Polen 07.–22.09.2013. Polnische und deutsche Künstlerinnen stellen aus." },
       { type: "text", text: "Initiatorin und künstlerische Leiterin des Projekts ist Karina Pośpiech, Malerin, Bühnenbildnerin, Filmemacherin und Architektin. Sie ist im polnischen Zabrze-Biskupice geboren und aufgewachsen und lebt seit 1977 in Deutschland." },
       { type: "image", src: "/images/scraped/bilder/b_zeche1_or.jpg" },
@@ -95,7 +104,9 @@ export const projects: Project[] = [
       { type: "text", text: "Schlesien zeichnet sich durch eine historisch prägnante und kulturelle Vielfalt aus. Über Jahrhunderte haben hier verschiedene ethnische, religiöse, kulturelle und ökonomische Akteure gewirkt. Das spezifisch europäische Gepräge der Region resultiert nicht zuletzt aus dieser Tatsache. Das Projekt spürt den Veränderungsprozessen in Zabrze nach und visualisiert politisch-künstlerische Utopien." },
     ],
     contentEn: [
+      { type: "video", src: "https://www.youtube.com/embed/GITVK9GjBnA" },
       { type: "text", text: "SilesiaTopia 2014. Interview with Karina Pośpiech about the project, commissioned by the Heinrich Böll Foundation, Berlin." },
+      { type: "video", src: "https://www.youtube.com/embed/34mHS241A7M" },
       { type: "text", text: "SilesiaTopia at Galerie Rondo Sztuki in Katowice, Poland, Sept 7–22, 2013. Polish and German female artists exhibit together." },
       { type: "text", text: "The initiator and artistic director of the project is Karina Pośpiech — painter, stage designer, filmmaker, and architect. She was born and raised in Zabrze-Biskupice, Poland, and has lived in Germany since 1977." },
       { type: "image", src: "/images/scraped/bilder/b_zeche1_or.jpg" },
@@ -256,12 +267,16 @@ export const projects: Project[] = [
     thumbnail: "/images/scraped/bilder/b_ohdealtfot_gr.jpg",
     content: [
       { type: "text", text: "Hildegard Ohde geboren 1914 in Berlin." },
-      { type: "text", text: "Hildegard Ohde hat 50 Jahre lang in Schöneberg gelebt und ist nach dem Einzug in die Wohnung in der Lindauerstraße 7 (nach dem Tod ihres Mannes 1958) nicht mehr umgezogen." },
-      { type: "text", text: "Fasziniert von der Lebensgeschichte dieser Frau, der Offenheit und Lebendigkeit dieser 92-jährigen Dame, habe ich den Versuch unternommen, sich ihr mit meinen künstlerischen Mitteln zu nähern." },
-      { type: "text", text: "Der Begriff des Alterns und der Schönheit kann durch die unterschiedlichen Ausdrucksformen neu erfahren werden." },
+      { type: "text", text: "Text: Julie August, Galeristin, 18m Galerie" },
+      { type: "text", text: "Hildegard Ohde hat 50 Jahre lang in Schöneberg gelebt und ist nach dem Einzug in die Wohnung in der Lindauerstraße 7 (nach dem Tod ihres Mannes 1958) nicht mehr umgezogen. Ich lebe seit 1988 im selben Mietshaus und habe meine Nachbarin in vielen Gesprächen näher kennengelernt. Fasziniert von der Lebensgeschichte dieser Frau, der Offenheit und Lebendigkeit dieser 92-jährigen Dame, habe ich den Versuch unternommen, sich ihr mit meinen künstlerischen Mitteln zu nähern, und zwar mit drei unterschiedlichen Ausdrucksmitteln: mit zwei Filmen, mit Siebdrucken und mit Fotografien." },
+      { type: "text", text: "Film 1 / Gesichtsspuren 2005, 7 Min." },
+      { type: "video", src: "https://www.youtube.com/embed/THp_DXa6FzU" },
+      { type: "text", text: "Film 2 / H.Ohde Interview 2006, 7 Min." },
+      { type: "video", src: "https://www.youtube.com/embed/FfxVMtiG9-4" },
+      { type: "text", text: "Zunächst entstand der Film, dessen Thema das Sichtbarmachen des Zeitgeschehens in den sich verändernden Gesichtszügen einer 92-jährigen Frau ist. Der Begriff des Alterns und der Schönheit kann durch die unterschiedlichen Ausdrucksformen neu erfahren werden. Die Projektion hat zum Ziel die Wahrnehmung der Zuschauer zu fokussieren und zu sensibilisieren auf das Gesicht eines Menschen im Ablauf seines Lebens." },
       { type: "image", src: "/images/scraped/bilder/b_ohdesieb_org.jpg" },
+      { type: "text", text: "Die mehrteilige Siebdruckarbeit basiert auf einem kleinen sw Foto, das Frau Ohde mit ihren Kindern 1943 bei einem Berliner Fotostudio hatte aufnehmen lassen. Das gleiche Foto wurde auch im Film verarbeitet — der Siebdruck nimmt die bewegten Bilder des Films auf und setzt diese in statische malerische Komposition einer zweidimensionalen Arbeit auf Wand um." },
       { type: "text", text: "Inzwischen ist Frau Ohde 93-jährig gestorben." },
-      { type: "text", text: "Die drei Teile der Installation bilden eine Einheit und sollen durch die gemeinsame Betrachtung eine neue andere Wahrnehmung ermöglichen." },
       { type: "image", src: "/images/scraped/bilder/b_ohdefotoalt_org.jpg" },
       { type: "image", src: "/images/scraped/bilder/b_ohdefilm_qu.jpg" },
       { type: "image", src: "/images/scraped/bilder/b_ohdesiebraum_org.jpg" },
@@ -271,12 +286,16 @@ export const projects: Project[] = [
     ],
     contentEn: [
       { type: "text", text: "Hildegard Ohde, born 1914 in Berlin." },
-      { type: "text", text: "Hildegard Ohde lived in Schöneberg for 50 years and never moved again after settling into the apartment at Lindauerstraße 7 following her husband's death in 1958." },
-      { type: "text", text: "Fascinated by this woman's life story, the openness and vitality of this 92-year-old lady, I undertook the attempt to approach her through my artistic means." },
-      { type: "text", text: "The concepts of aging and beauty can be experienced anew through different forms of expression." },
+      { type: "text", text: "Text: Julie August, Gallerist, 18m Gallery" },
+      { type: "text", text: "Hildegard Ohde lived in Schöneberg for 50 years and never moved again after settling into the apartment at Lindauerstraße 7 following her husband's death in 1958. I have lived in the same building since 1988 and got to know my neighbor through many conversations. Fascinated by this woman's life story, the openness and vitality of this 92-year-old lady, I undertook the attempt to approach her through my artistic means — with three different forms of expression: two films, screen prints, and photographs." },
+      { type: "text", text: "Film 1 / Gesichtsspuren (Facial Traces) 2005, 7 Min." },
+      { type: "video", src: "https://www.youtube.com/embed/THp_DXa6FzU" },
+      { type: "text", text: "Film 2 / H.Ohde Interview 2006, 7 Min." },
+      { type: "video", src: "https://www.youtube.com/embed/FfxVMtiG9-4" },
+      { type: "text", text: "First came the film, whose theme is making the passage of time visible in the changing facial features of a 92-year-old woman. The concepts of aging and beauty can be experienced anew through different forms of expression. The projection aims to focus and sensitize the viewer's perception to a person's face over the course of a lifetime." },
       { type: "image", src: "/images/scraped/bilder/b_ohdesieb_org.jpg" },
+      { type: "text", text: "The multi-part screen print work is based on a small black-and-white photo that Mrs. Ohde had taken with her children at a Berlin photo studio in 1943. The same photo was also used in the film — the screen print takes the moving images of the film and translates them into a static, painterly composition of a two-dimensional wall work." },
       { type: "text", text: "Mrs. Ohde has since passed away at the age of 93." },
-      { type: "text", text: "The three parts of the installation form a unity and are intended to enable a new, different perception through their combined viewing." },
       { type: "image", src: "/images/scraped/bilder/b_ohdefotoalt_org.jpg" },
       { type: "image", src: "/images/scraped/bilder/b_ohdefilm_qu.jpg" },
       { type: "image", src: "/images/scraped/bilder/b_ohdesiebraum_org.jpg" },

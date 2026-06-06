@@ -55,6 +55,16 @@ export default function ProjectDetailContent({ project, prev, next }: Props) {
                   unoptimized
                 />
               </div>
+            ) : block.type === "video" ? (
+              <div key={i} className="relative w-full aspect-video my-8">
+                <iframe
+                  src={block.src}
+                  title={de ? project.title : project.titleEn}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
             ) : (
               <p key={i} className="text-muted leading-relaxed">
                 {block.text}

@@ -132,6 +132,7 @@ export const projects: Project[] = [
     mediumEn: "Film, duration 03:12, Direction: Karina Pośpiech, Editing: Krzysztof Visconti",
     thumbnail: "/images/scraped/bilder/b_worldstill1_gr.jpg",
     content: [
+      { type: "video", src: "https://www.youtube.com/embed/YPbjAif8XgA" },
       { type: "text", text: "Der Film ist im Rahmen des Deutsch-Polnischen Handyfilmprojekts 'ExperymentNAchbarn Sasiedzi 2011' entstanden, vom Goethe Institut in Warschau initiiert, gefördert und ausgewählt für die Präsentation beim Dokumentarfilmfestival Planet doc. in Warschau im Mai 2011." },
       { type: "text", text: "Die Aufzeichnung des Films per Handy erlaubt eine intime Gesprächssituation, die nur so möglich geworden ist." },
       { type: "image", src: "/images/scraped/bilder/b_world_org.jpg" },
@@ -142,6 +143,7 @@ export const projects: Project[] = [
       { type: "text", text: "Nahe der Warschauer Brücke im Eingang zur Sparkasse wärmen sich bei klirrender Kälte zwei Polen auf. Sie leben seit anderthalb Jahren auf der Straße und erzählen mir Ihre bewegende Lebensgeschichte. Der Film enthält in Teilen deutsche Untertitel." },
     ],
     contentEn: [
+      { type: "video", src: "https://www.youtube.com/embed/YPbjAif8XgA" },
       { type: "text", text: "The film was created as part of the German-Polish mobile phone film project 'ExperymentNAchbarn Sasiedzi 2011,' initiated and funded by the Goethe Institute in Warsaw, and selected for presentation at the Planet doc. documentary film festival in Warsaw in May 2011." },
       { type: "text", text: "Recording the film on a mobile phone allows an intimate conversational situation that would not have been possible otherwise." },
       { type: "image", src: "/images/scraped/bilder/b_world_org.jpg" },

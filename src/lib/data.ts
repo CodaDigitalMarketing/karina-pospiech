@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     slug: "fbi",
     title: "FBI. Fassbinder, Beuys + Ich",
-    titleEn: "FBI. Fassbinder, Beuys + Me",
+    titleEn: "FBI. Fassbinder, Beuys + I",
     year: "2016–2017",
     medium: "Fotomontage, Cyanotypie, Siebdruck und Carborundum – Radierung. Originalfotos von Helga Kneidl",
     mediumEn: "Photomontage, Cyanotype, Screen Print and Carborundum Etching. Original photos by Helga Kneidl",
